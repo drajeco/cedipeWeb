@@ -46,7 +46,11 @@ Secciones de `index.html`: Header con nav, Hero, Servicios (7 prestaciones), Sob
 
 Se verificó que el servidor local sirve correctamente el HTML, CSS, JS y las 7 imágenes (todo 200 OK). El usuario abrió `index.html` en su navegador para revisión visual (feedback pendiente).
 
-No se ejecutó ningún `git init` ni se creó repositorio remoto todavía — es una acción explícitamente pospuesta hasta confirmación del usuario.
+Se ejecutó `git init` y se creó el primer commit local (28 archivos) el 2026-09-10. Ese mismo día se creó el repositorio remoto en GitHub (`https://github.com/drajeco/cedipeWeb`, creado manualmente por el usuario en github.com) y se hizo el push inicial (`main` → `origin/main`).
+
+El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy (`pages build and deployment`) terminó exitoso y que el sitio responde 200 en **https://drajeco.github.io/cedipeWeb/**, con HTML, CSS, JS e imágenes cargando correctamente y todas las secciones presentes.
+
+**El sitio ya está online y públicamente accesible.** Sigue con los datos placeholder (WhatsApp de prueba, Formspree sin configurar) — ver pendientes.
 
 ## Pendientes / próximos pasos
 
@@ -54,8 +58,10 @@ No se ejecutó ningún `git init` ni se creó repositorio remoto todavía — es
 2. Reemplazar el número de WhatsApp de prueba (`598910303333`) por el número real del consultorio.
 3. Crear cuenta gratuita en [formspree.io](https://formspree.io), generar el ID de formulario y reemplazarlo en `index.html` (buscar `TU_ID_DE_FORMSPREE`).
 4. Decidir si se publica ya o se espera a tener el teléfono real.
-5. Cuando el usuario confirme, publicar en GitHub Pages: `git init`, crear repo remoto (requiere cuenta de GitHub del usuario), push, y activar Pages en la configuración del repo (pasos detallados en `README.md`).
-6. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
+5. ~~Publicar en GitHub Pages: git init, crear repo remoto, push~~ → **hecho** (repo: `https://github.com/drajeco/cedipeWeb`).
+6. ~~Activar GitHub Pages~~ → **hecho**, sitio online en `https://drajeco.github.io/cedipeWeb/`.
+7. Reemplazar el WhatsApp de prueba por el real y configurar Formspree (pendientes 2 y 3) — ahora es más urgente porque el sitio ya es público.
+8. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
 
 ## Notas para retomar en otro chat
 
