@@ -25,26 +25,29 @@ Crear una landing page para CEDIPE (Centro de Enfermedades Digestivas Pediátric
 | Email de contacto | cedipe.gastro@gmail.com | Dato real provisto por el usuario. |
 | Obras sociales/prepagas | No se listan en el sitio | Decisión del usuario ("obviemos esa información"). |
 | Contenido | Se usa contenido real de Instagram (`contenido/texto.md` y `contenido/imagenes/`) en vez de placeholders genéricos | El usuario proveyó el material; da más autenticidad y ahorra tiempo de redacción. |
+| Publicar con datos placeholder | Se publicó el sitio ya (con WhatsApp de prueba y sin Formspree configurado) en vez de esperar a tener todo el contenido real | Permite iterar sobre el sitio en producción y verificar que el despliegue funciona; el riesgo de indexación prematura se mitigó con `robots.txt` + `noindex` (ver más abajo). |
 
-## Estado actual (última actualización: 2026-09-09)
+## Estado actual (última actualización: 2026-09-10)
 
-Sitio construido y funcionando localmente. Estructura del proyecto:
+Sitio publicado y funcionando en producción. Estructura del proyecto:
 
 ```
 07 - pagina_web/
-├── index.html          → landing de una sola página
+├── index.html          → landing de una sola página (incluye meta noindex temporal)
 ├── css/style.css        → estilos (paleta azul marino + celeste, tomada del logo real)
 ├── js/script.js         → menú móvil + año dinámico en el footer
 ├── assets/img/          → logo, favicon y 6 fotos optimizadas (comprimidas con sips, de ~1-2MB a 50-160KB)
 ├── contenido/            → material fuente original (logo, fotos, texto.md con posts de Instagram) — no se publica tal cual
 ├── .nojekyll             → evita que GitHub Pages procese el sitio con Jekyll
+├── robots.txt            → Disallow: / (bloqueo temporal de indexación, ver nota más abajo)
+├── .gitignore            → excluye .DS_Store
 ├── README.md             → instrucciones técnicas de despliegue y reemplazo de datos
 └── PROYECTO.md           → este archivo
 ```
 
 Secciones de `index.html`: Header con nav, Hero, Servicios (7 prestaciones), Sobre CEDIPE, Info para familias (acordeón con estreñimiento, celiaquía, intolerancia a la lactosa, EII, diarrea crónica, disquecia del lactante), Ubicación (con mapa embebido de Google Maps), Contacto (formulario + WhatsApp + email), botón flotante de WhatsApp, footer.
 
-Se verificó que el servidor local sirve correctamente el HTML, CSS, JS y las 7 imágenes (todo 200 OK). El usuario abrió `index.html` en su navegador para revisión visual (feedback pendiente).
+Se verificó que el servidor local sirve correctamente el HTML, CSS, JS y las 7 imágenes (todo 200 OK). El usuario abrió `index.html` en su navegador para revisión visual y no reportó objeciones — avanzó directamente a publicar.
 
 Se ejecutó `git init` y se creó el primer commit local (28 archivos) el 2026-09-10. Ese mismo día se creó el repositorio remoto en GitHub (`https://github.com/drajeco/cedipeWeb`, creado manualmente por el usuario en github.com) y se hizo el push inicial (`main` → `origin/main`).
 
@@ -56,14 +59,12 @@ El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy 
 
 ## Pendientes / próximos pasos
 
-1. **Feedback visual del usuario** sobre el diseño abierto en el navegador (colores, textos, orden de secciones, imágenes) — en curso.
-2. Reemplazar el número de WhatsApp de prueba (`598910303333`) por el número real del consultorio.
-3. Crear cuenta gratuita en [formspree.io](https://formspree.io), generar el ID de formulario y reemplazarlo en `index.html` (buscar `TU_ID_DE_FORMSPREE`).
-4. Decidir si se publica ya o se espera a tener el teléfono real.
-5. ~~Publicar en GitHub Pages: git init, crear repo remoto, push~~ → **hecho** (repo: `https://github.com/drajeco/cedipeWeb`).
-6. ~~Activar GitHub Pages~~ → **hecho**, sitio online en `https://drajeco.github.io/cedipeWeb/`.
-7. Reemplazar el WhatsApp de prueba por el real y configurar Formspree (pendientes 2 y 3) — ahora es más urgente porque el sitio ya es público.
-8. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
+1. Reemplazar el número de WhatsApp de prueba (`598910303333`) por el número real del consultorio.
+2. Crear cuenta gratuita en [formspree.io](https://formspree.io), generar el ID de formulario y reemplazarlo en `index.html` (buscar `TU_ID_DE_FORMSPREE`).
+3. Una vez reemplazados los dos puntos anteriores, sacar el bloqueo de indexación (`robots.txt` y la meta `noindex` de `index.html`) para que el sitio pueda aparecer en buscadores.
+4. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
+
+**Ya resuelto:** feedback visual inicial del usuario, `git init` + commit + repo remoto + push, activación de GitHub Pages, mitigación temporal de indexación (`robots.txt`, `noindex`, sin link clickeable en la documentación).
 
 ## Notas para retomar en otro chat
 
