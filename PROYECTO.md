@@ -48,9 +48,11 @@ Se verificó que el servidor local sirve correctamente el HTML, CSS, JS y las 7 
 
 Se ejecutó `git init` y se creó el primer commit local (28 archivos) el 2026-09-10. Ese mismo día se creó el repositorio remoto en GitHub (`https://github.com/drajeco/cedipeWeb`, creado manualmente por el usuario en github.com) y se hizo el push inicial (`main` → `origin/main`).
 
-El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy (`pages build and deployment`) terminó exitoso y que el sitio responde 200 en **https://drajeco.github.io/cedipeWeb/**, con HTML, CSS, JS e imágenes cargando correctamente y todas las secciones presentes.
+El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy (`pages build and deployment`) terminó exitoso y que el sitio responde 200 en `drajeco.github.io/cedipeWeb` (URL sin hipervínculo a propósito, ver nota de indexación más abajo), con HTML, CSS, JS e imágenes cargando correctamente y todas las secciones presentes.
 
 **El sitio ya está online y públicamente accesible.** Sigue con los datos placeholder (WhatsApp de prueba, Formspree sin configurar) — ver pendientes.
+
+**Indexación/discreción temporal:** dado que el sitio es público mientras todavía tiene datos placeholder, se agregó `robots.txt` (`Disallow: /`) y `<meta name="robots" content="noindex, nofollow">` en `index.html` para que buscadores como Google/Bing no lo indexen. Además, se sacó el hipervínculo activo a la URL publicada de `README.md`/`PROYECTO.md` (queda como texto plano en backticks), porque GitHub renderiza esos `.md` en una página de alta autoridad que los crawlers rastrean seguido, y un link ahí era la vía más probable de que el sitio se indexara sin querer. Ninguna de estas medidas oculta el sitio de alguien que ya tenga el link — solo evita que se descubra "por accidente" vía buscadores mientras se termina de cargar el contenido real.
 
 ## Pendientes / próximos pasos
 
