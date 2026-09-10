@@ -392,6 +392,11 @@ h2 {
   font-size: 0.85rem;
   margin-top: 10px;
 }
+.footer-privacy {
+  color: #6f85a8;
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
 
 /* WhatsApp floating button */
 .whatsapp-float {
