@@ -12,19 +12,15 @@ Ver también `PROYECTO.md` para la bitácora de objetivos, decisiones y pendient
 
 ## Estado: publicado, en modo de prueba
 
-El sitio ya está publicado en GitHub Pages (repo `drajeco/cedipeWeb`, rama `main`), pero todavía usa datos placeholder (ver abajo). Mientras tanto, `robots.txt` (`Disallow: /`) y la meta `<meta name="robots" content="noindex, nofollow">` en `index.html` bloquean su indexación en buscadores. **Sacá esas dos protecciones recién cuando el WhatsApp y el Formspree sean los reales** — si no, quedaría indexado con datos de prueba.
+El sitio ya está publicado en GitHub Pages (repo `drajeco/cedipeWeb`, rama `main`), pero todavía usa un número de WhatsApp de prueba (ver abajo). Mientras tanto, `robots.txt` (`Disallow: /`) y la meta `<meta name="robots" content="noindex, nofollow">` en `index.html` bloquean su indexación en buscadores. **Sacá esas dos protecciones recién cuando el WhatsApp sea el real** — si no, quedaría indexado con un dato de prueba.
+
+El sitio **no tiene formulario de contacto** — solo botón de WhatsApp y email como texto. Se sacó porque requería Formspree, que necesita que el dueño de `cedipe.gastro@gmail.com` confirme un email de verificación, y quien mantiene este repo no tiene acceso a esa casilla. Si en algún momento se resuelve ese acceso, se puede reincorporar (ver `PROYECTO.md`).
 
 ## Antes de anunciar el sitio: cosas por reemplazar
 
 1. **Número de WhatsApp real.** Ahora mismo el sitio usa un número de prueba (`598910303333`). Buscá y reemplazá `598910303333` en `index.html` (aparece en el botón flotante, el header y varias secciones) por el número real, en formato internacional sin espacios ni símbolos (ej: `59899123456`).
 
-2. **Formulario de contacto (Formspree).**
-   - Creá una cuenta gratuita en [formspree.io](https://formspree.io) (hasta 50 envíos/mes sin costo).
-   - Creá un formulario nuevo y copiá el ID que te da (algo como `xzbqjkvw`).
-   - En `index.html`, buscá `https://formspree.io/f/TU_ID_DE_FORMSPREE` y reemplazá `TU_ID_DE_FORMSPREE` por ese ID.
-   - Formspree te va a pedir confirmar el email la primera vez que llegue un mensaje de prueba.
-
-3. **Dirección/teléfono/email**, si cambian, están en `index.html` en las secciones "Ubicación" y "Contacto", y en el `<footer>`.
+2. **Dirección/teléfono/email**, si cambian, están en `index.html` en las secciones "Ubicación" y "Contacto", y en el `<footer>`.
 
 ## Cómo publicar en GitHub Pages (gratis)
 
