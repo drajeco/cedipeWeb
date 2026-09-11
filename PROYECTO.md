@@ -26,6 +26,7 @@ Crear una landing page para CEDIPE (Centro de Enfermedades Digestivas Pediátric
 | Obras sociales/prepagas | No se listan en el sitio | Decisión del usuario ("obviemos esa información"). |
 | Contenido | Se usa contenido real de Instagram (`contenido/texto.md` y `contenido/imagenes/`) en vez de placeholders genéricos | El usuario proveyó el material; da más autenticidad y ahorra tiempo de redacción. |
 | Publicar con datos placeholder | Se publicó el sitio ya (con WhatsApp de prueba) en vez de esperar a tener todo el contenido real | Permite iterar sobre el sitio en producción y verificar que el despliegue funciona; el riesgo de indexación prematura se mitigó con `robots.txt` + `noindex` (ver más abajo). |
+| Seguimiento de visitas | ~~Cloudflare Web Analytics~~ → **Google Analytics (GA4)** | Se intentó primero Cloudflare Web Analytics (gratis, sin cookies) pero el alta del sitio en el dashboard quedó trabada al hacer clic en "Done" (probable bloqueo por ad-blocker/extensión, no se pudo resolver). Se cambió a GA4: también gratis, más estándar, y da un dashboard más completo. Como GA4 usa cookies, se agregó un aviso breve de privacidad en el footer del sitio. **Pendiente:** el usuario tiene que crear la propiedad en analytics.google.com y pasar el Measurement ID (`G-XXXXXXXXXX`) para terminar la integración. |
 
 ## Estado actual (última actualización: 2026-09-10)
 
@@ -57,14 +58,17 @@ El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy 
 
 **Indexación/discreción temporal:** dado que el sitio es público mientras todavía tiene datos placeholder, se agregó `robots.txt` (`Disallow: /`) y `<meta name="robots" content="noindex, nofollow">` en `index.html` para que buscadores como Google/Bing no lo indexen. Además, se sacó el hipervínculo activo a la URL publicada de `README.md`/`PROYECTO.md` (queda como texto plano en backticks), porque GitHub renderiza esos `.md` en una página de alta autoridad que los crawlers rastrean seguido, y un link ahí era la vía más probable de que el sitio se indexara sin querer. Ninguna de estas medidas oculta el sitio de alguien que ya tenga el link — solo evita que se descubra "por accidente" vía buscadores mientras se termina de cargar el contenido real.
 
+**Seguimiento de visitas (analytics):** se agregó al footer de `index.html` un aviso breve ("Este sitio utiliza Google Analytics para medir visitas de forma anónima..."), preparando el terreno para sumar el script de GA4. Falta el paso final: el usuario tiene que crear la propiedad en Google Analytics y pasar el Measurement ID (`G-XXXXXXXXXX`) para que se agregue el script `gtag.js` al `<head>` de `index.html`.
+
 ## Pendientes / próximos pasos
 
 1. Reemplazar el número de WhatsApp de prueba (`598910303333`) por el número real del consultorio.
-2. Una vez reemplazado, sacar el bloqueo de indexación (`robots.txt` y la meta `noindex` de `index.html`) para que el sitio pueda aparecer en buscadores.
-3. (Opcional, futuro) Si en algún momento alguien con acceso a `cedipe.gastro@gmail.com` completa el alta en formspree.io, se puede reincorporar el formulario de contacto (instrucciones ya dadas en el chat).
-4. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
+2. Crear la propiedad GA4 en analytics.google.com y pasar el Measurement ID (`G-XXXXXXXXXX`) para completar la integración de analytics.
+3. Una vez reemplazado el WhatsApp, sacar el bloqueo de indexación (`robots.txt` y la meta `noindex` de `index.html`) para que el sitio pueda aparecer en buscadores.
+4. (Opcional, futuro) Si en algún momento alguien con acceso a `cedipe.gastro@gmail.com` completa el alta en formspree.io, se puede reincorporar el formulario de contacto (instrucciones ya dadas en el chat).
+5. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
 
-**Ya resuelto:** feedback visual inicial del usuario, `git init` + commit + repo remoto + push, activación de GitHub Pages, mitigación temporal de indexación (`robots.txt`, `noindex`, sin link clickeable en la documentación), decisión de sacar el formulario de contacto por falta de acceso al email del consultorio.
+**Ya resuelto:** feedback visual inicial del usuario, `git init` + commit + repo remoto + push, activación de GitHub Pages, mitigación temporal de indexación (`robots.txt`, `noindex`, sin link clickeable en la documentación), decisión de sacar el formulario de contacto por falta de acceso al email del consultorio, elección de GA4 sobre Cloudflare Web Analytics (que quedó trabado en el alta) y aviso de privacidad agregado en el footer.
 
 ## Notas para retomar en otro chat
 

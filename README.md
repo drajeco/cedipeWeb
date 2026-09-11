@@ -22,6 +22,16 @@ El sitio **no tiene formulario de contacto** — solo botón de WhatsApp y email
 
 2. **Dirección/teléfono/email**, si cambian, están en `index.html` en las secciones "Ubicación" y "Contacto", y en el `<footer>`.
 
+## Seguimiento de visitas (analytics)
+
+Se eligió **Google Analytics (GA4)** (se probó primero Cloudflare Web Analytics, pero el alta del sitio quedó trabada en el dashboard). Falta el paso final:
+
+1. Crear una propiedad en [analytics.google.com](https://analytics.google.com) con un flujo de datos "Web" apuntando a `https://drajeco.github.io/cedipeWeb/`.
+2. Copiar el **Measurement ID** (`G-XXXXXXXXXX`) que te da GA4.
+3. Agregarlo en `index.html`, dentro del `<head>`, con el snippet estándar de `gtag.js` (ver [instrucciones de Google](https://support.google.com/analytics/answer/9304153)).
+
+Ya se agregó en el `<footer>` un aviso breve de que el sitio usa Analytics, ya que GA4 usa cookies.
+
 ## Cómo publicar en GitHub Pages (gratis)
 
 > Para este proyecto ya está hecho (repo `drajeco/cedipeWeb`, Pages activo). Estos pasos quedan como referencia por si hay que rehacerlo o replicarlo en otro repo.
