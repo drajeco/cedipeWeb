@@ -20,7 +20,7 @@ Crear una landing page para CEDIPE (Centro de Enfermedades Digestivas Pediátric
 | Dominio | Por ahora el subdominio gratuito de GitHub Pages (`usuario.github.io`) | Se evalúa comprar uno propio más adelante; migrar es solo agregar un archivo `CNAME`, sin rehacer el sitio. |
 | Stack | HTML + CSS + JS plano, sin frameworks ni build step | Menor complejidad de mantenimiento, ideal para GitHub Pages. |
 | Equipo médico | Sin nombres ni fotos individuales por ahora — sección institucional genérica | Decisión explícita del usuario para arrancar más rápido. |
-| Dirección publicada | Hospital Italiano, Planta Baja, Consultorio 17, Bv. Artigas 1632, Montevideo | Dato encontrado en material de Instagram (más completo que el dato inicial "Consultorio 19" sin calle); el usuario confirmó usar este. |
+| Dirección publicada | Hospital Italiano, Planta Baja, Consultorio 19, Bv. Artigas 1632, Montevideo | Dato confirmado por el usuario el 2026-10-18. |
 | Teléfono | `+598 92 021 615` | Número real de contacto y WhatsApp, actualizado el 2026-10-18. |
 | Email de contacto | cedipe.gastro@gmail.com | Dato real provisto por el usuario. |
 | Obras sociales/prepagas | No se listan en el sitio | Decisión del usuario ("obviemos esa información"). |
