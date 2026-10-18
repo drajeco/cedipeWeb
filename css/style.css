@@ -268,7 +268,7 @@ h2 {
 /* Team */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 .team-card {
@@ -536,6 +536,25 @@ h2 {
     grid-template-columns: 1fr;
   }
   .accordion-body-media {
+    grid-template-columns: 1fr;
+  }
+  .team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .team-card-body {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-grid {
     grid-template-columns: 1fr;
   }
 }
