@@ -37,7 +37,7 @@ Sitio publicado y funcionando en producción. Estructura del proyecto:
 ├── index.html          → landing de una sola página (incluye meta noindex temporal)
 ├── css/style.css        → estilos (paleta azul marino + celeste, tomada del logo real)
 ├── js/script.js         → menú móvil + año dinámico en el footer
-├── assets/img/          → logo, favicon y 11 fotos optimizadas para el sitio
+├── assets/img/          → logo, favicon y 12 fotos optimizadas para el sitio
 ├── contenido/            → material fuente original (logo, fotos, texto.md con posts de Instagram) — no se publica tal cual
 ├── .nojekyll             → evita que GitHub Pages procese el sitio con Jekyll
 ├── robots.txt            → Disallow: / (bloqueo temporal de indexación, ver nota más abajo)
