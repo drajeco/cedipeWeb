@@ -37,7 +37,7 @@ Sitio publicado y funcionando en producción. Estructura del proyecto:
 ├── index.html          → landing de una sola página (incluye meta noindex temporal)
 ├── css/style.css        → estilos (paleta azul marino + celeste, tomada del logo real)
 ├── js/script.js         → menú móvil + año dinámico en el footer
-├── assets/img/          → logo, favicon y 13 fotos optimizadas para el sitio
+├── assets/img/          → logo, favicon y 21 fotos optimizadas para el sitio
 ├── contenido/            → material fuente original (logo, fotos, texto.md con posts de Instagram) — no se publica tal cual
 ├── .nojekyll             → evita que GitHub Pages procese el sitio con Jekyll
 ├── robots.txt            → Disallow: / (bloqueo temporal de indexación, ver nota más abajo)
@@ -46,7 +46,7 @@ Sitio publicado y funcionando en producción. Estructura del proyecto:
 └── PROYECTO.md           → este archivo
 ```
 
-Secciones de `index.html`: Header con nav, Hero, Servicios (7 prestaciones), Sobre CEDIPE, Info para familias (acordeón con estreñimiento, celiaquía, intolerancia a la lactosa, EII, diarrea crónica, disquecia del lactante), Ubicación (con mapa embebido de Google Maps), Contacto (WhatsApp, email y formulario pendiente de activación), botón flotante de WhatsApp, footer.
+Secciones de `index.html`: Header con nav, Hero, Servicios (7 prestaciones), Sobre CEDIPE, Quiénes somos (equipo con 7 perfiles), Info para familias (acordeón con estreñimiento, celiaquía, intolerancia a la lactosa, EII, diarrea crónica, disquecia del lactante), Ubicación (con mapa embebido de Google Maps), Contacto (WhatsApp, email y formulario pendiente de activación), botón flotante de WhatsApp, footer.
 
 Se verificó que el servidor local sirve correctamente el HTML, CSS, JS y las 7 imágenes (todo 200 OK). El usuario abrió `index.html` en su navegador para revisión visual y no reportó objeciones — avanzó directamente a publicar.
 
