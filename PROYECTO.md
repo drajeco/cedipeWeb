@@ -15,7 +15,7 @@ Crear una landing page para CEDIPE (Centro de Enfermedades Digestivas Pediátric
 | Tema | Decisión | Motivo |
 |---|---|---|
 | Agendamiento | ~~Botón de WhatsApp + formulario de contacto~~ → **solo WhatsApp** (`wa.me`) | Decisión original: WhatsApp gratis e inmediato + formulario como canal formal. **Superada** el 2026-09-10: ver fila "Formulario de contacto" más abajo. |
-| Formulario de contacto | **Descartado** (no se implementa por ahora) | Requería Formspree, que necesita que el dueño del email (`cedipe.gastro@gmail.com`) confirme una verificación — quien desarrolla el sitio no tiene acceso a esa casilla. Se simplificó a WhatsApp + email como texto, sin dependencias externas. Se puede retomar el día que alguien con acceso al mail complete el alta en formspree.io (ver instrucciones que se le pasaron en el chat). |
+| Formulario de contacto | **Incluido visualmente, pendiente de activación** | Se agregó como canal alternativo el 2026-10-18, pero todavía no envía datos. Para activarlo con Formspree, el dueño de `cedipe.gastro@gmail.com` debe crear/verificar la cuenta y proporcionar el endpoint del formulario. Mientras tanto, el envío orienta a WhatsApp. |
 | Hosting | GitHub Pages | 100% gratis, requiere cuenta de GitHub y repo público. |
 | Dominio | Por ahora el subdominio gratuito de GitHub Pages (`usuario.github.io`) | Se evalúa comprar uno propio más adelante; migrar es solo agregar un archivo `CNAME`, sin rehacer el sitio. |
 | Stack | HTML + CSS + JS plano, sin frameworks ni build step | Menor complejidad de mantenimiento, ideal para GitHub Pages. |
@@ -46,7 +46,7 @@ Sitio publicado y funcionando en producción. Estructura del proyecto:
 └── PROYECTO.md           → este archivo
 ```
 
-Secciones de `index.html`: Header con nav, Hero, Servicios (7 prestaciones), Sobre CEDIPE, Info para familias (acordeón con estreñimiento, celiaquía, intolerancia a la lactosa, EII, diarrea crónica, disquecia del lactante), Ubicación (con mapa embebido de Google Maps), Contacto (WhatsApp + email, sin formulario), botón flotante de WhatsApp, footer.
+Secciones de `index.html`: Header con nav, Hero, Servicios (7 prestaciones), Sobre CEDIPE, Info para familias (acordeón con estreñimiento, celiaquía, intolerancia a la lactosa, EII, diarrea crónica, disquecia del lactante), Ubicación (con mapa embebido de Google Maps), Contacto (WhatsApp, email y formulario pendiente de activación), botón flotante de WhatsApp, footer.
 
 Se verificó que el servidor local sirve correctamente el HTML, CSS, JS y las 7 imágenes (todo 200 OK). El usuario abrió `index.html` en su navegador para revisión visual y no reportó objeciones — avanzó directamente a publicar.
 
@@ -54,7 +54,7 @@ Se ejecutó `git init` y se creó el primer commit local (28 archivos) el 2026-0
 
 El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy (`pages build and deployment`) terminó exitoso y que el sitio responde 200 en `drajeco.github.io/cedipeWeb` (URL sin hipervínculo a propósito, ver nota de indexación más abajo), con HTML, CSS, JS e imágenes cargando correctamente y todas las secciones presentes.
 
-**El sitio ya está online y públicamente accesible.** Se sacó el formulario de contacto (ver decisión "Formulario de contacto" en la tabla de arriba) y el número de WhatsApp real ya fue incorporado.
+**El sitio ya está online y públicamente accesible.** El número de WhatsApp real ya fue incorporado. También se agregó un formulario de contacto visual, pendiente de activación (ver decisión "Formulario de contacto" en la tabla de arriba).
 
 **Indexación/discreción temporal:** dado que el sitio es público mientras todavía tiene datos placeholder, se agregó `robots.txt` (`Disallow: /`) y `<meta name="robots" content="noindex, nofollow">` en `index.html` para que buscadores como Google/Bing no lo indexen. Además, se sacó el hipervínculo activo a la URL publicada de `README.md`/`PROYECTO.md` (queda como texto plano en backticks), porque GitHub renderiza esos `.md` en una página de alta autoridad que los crawlers rastrean seguido, y un link ahí era la vía más probable de que el sitio se indexara sin querer. Ninguna de estas medidas oculta el sitio de alguien que ya tenga el link — solo evita que se descubra "por accidente" vía buscadores mientras se termina de cargar el contenido real.
 
@@ -64,7 +64,7 @@ El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy 
 
 1. Crear la propiedad GA4 en analytics.google.com y pasar el Measurement ID (`G-XXXXXXXXXX`) para completar la integración de analytics.
 2. Retirar el bloqueo de indexación (`robots.txt` y la meta `noindex` de `index.html`) para que el sitio pueda aparecer en buscadores cuando se decida anunciarlo.
-3. (Opcional, futuro) Si en algún momento alguien con acceso a `cedipe.gastro@gmail.com` completa el alta en formspree.io, se puede reincorporar el formulario de contacto (instrucciones ya dadas en el chat).
+3. Activar el formulario: cuando alguien con acceso a `cedipe.gastro@gmail.com` complete el alta en formspree.io, agregar el endpoint provisto al formulario y reemplazar el aviso temporal que orienta a WhatsApp.
 4. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
 
 **Ya resuelto:** feedback visual inicial del usuario, `git init` + commit + repo remoto + push, activación de GitHub Pages, mitigación temporal de indexación (`robots.txt`, `noindex`, sin link clickeable en la documentación), decisión de sacar el formulario de contacto por falta de acceso al email del consultorio, elección de GA4 sobre Cloudflare Web Analytics (que quedó trabado en el alta) y aviso de privacidad agregado en el footer.

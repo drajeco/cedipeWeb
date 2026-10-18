@@ -14,7 +14,7 @@ Ver también `PROYECTO.md` para la bitácora de objetivos, decisiones y pendient
 
 El sitio ya está publicado en GitHub Pages (repo `drajeco/cedipeWeb`, rama `main`) y tiene el número de WhatsApp real. `robots.txt` (`Disallow: /`) y la meta `<meta name="robots" content="noindex, nofollow">` en `index.html` todavía bloquean su indexación en buscadores; pueden retirarse cuando se decida habilitarla.
 
-El sitio **no tiene formulario de contacto** — solo botón de WhatsApp y email como texto. Se sacó porque requería Formspree, que necesita que el dueño de `cedipe.gastro@gmail.com` confirme un email de verificación, y quien mantiene este repo no tiene acceso a esa casilla. Si en algún momento se resuelve ese acceso, se puede reincorporar (ver `PROYECTO.md`).
+El sitio incluye un formulario de contacto visual como canal alternativo, pero **todavía no envía datos**: al enviarlo, informa que la vía disponible es WhatsApp. Para activarlo se requiere configurar un endpoint de Formspree y confirmar el email `cedipe.gastro@gmail.com` desde la cuenta propietaria.
 
 ## Antes de anunciar el sitio: revisar datos de contacto
 

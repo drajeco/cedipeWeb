@@ -365,6 +365,67 @@ h2 {
   font-size: 0.94rem;
   margin-top: 18px;
 }
+.contact-form-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 30px 0 22px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+.contact-form-divider::before,
+.contact-form-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--color-border);
+}
+.contact-form {
+  text-align: left;
+}
+.form-field {
+  margin-bottom: 16px;
+}
+.form-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 0.94rem;
+}
+.form-field label span {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  font: inherit;
+  line-height: 1.4;
+}
+.form-field textarea {
+  resize: vertical;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 3px solid rgba(58, 175, 196, 0.25);
+  border-color: var(--color-accent);
+}
+.form-privacy {
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  margin: 2px 0 18px;
+}
+.form-status {
+  min-height: 1.5em;
+  margin: 14px 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
 
 /* Footer */
 .site-footer {
@@ -461,5 +522,8 @@ h2 {
   .nav-cta {
     margin-left: 0;
     justify-content: center;
+  }
+  .contact-card {
+    padding: 32px 20px;
   }
 }

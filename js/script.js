@@ -14,3 +14,11 @@ siteNav.querySelectorAll("a").forEach((link) => {
     navToggle.setAttribute("aria-expanded", "false");
   });
 });
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  formStatus.textContent = "El formulario estará disponible próximamente. Por ahora, escribinos por WhatsApp para coordinar tu consulta.";
+});
