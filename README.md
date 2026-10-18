@@ -10,17 +10,15 @@ Este proyecto se desarrolló con Claude Code. Para retomar la conversación orig
 
 Ver también `PROYECTO.md` para la bitácora de objetivos, decisiones y pendientes.
 
-## Estado: publicado, en modo de prueba
+## Estado: publicado, pendiente de habilitar indexación
 
-El sitio ya está publicado en GitHub Pages (repo `drajeco/cedipeWeb`, rama `main`), pero todavía usa un número de WhatsApp de prueba (ver abajo). Mientras tanto, `robots.txt` (`Disallow: /`) y la meta `<meta name="robots" content="noindex, nofollow">` en `index.html` bloquean su indexación en buscadores. **Sacá esas dos protecciones recién cuando el WhatsApp sea el real** — si no, quedaría indexado con un dato de prueba.
+El sitio ya está publicado en GitHub Pages (repo `drajeco/cedipeWeb`, rama `main`) y tiene el número de WhatsApp real. `robots.txt` (`Disallow: /`) y la meta `<meta name="robots" content="noindex, nofollow">` en `index.html` todavía bloquean su indexación en buscadores; pueden retirarse cuando se decida habilitarla.
 
 El sitio **no tiene formulario de contacto** — solo botón de WhatsApp y email como texto. Se sacó porque requería Formspree, que necesita que el dueño de `cedipe.gastro@gmail.com` confirme un email de verificación, y quien mantiene este repo no tiene acceso a esa casilla. Si en algún momento se resuelve ese acceso, se puede reincorporar (ver `PROYECTO.md`).
 
-## Antes de anunciar el sitio: cosas por reemplazar
+## Antes de anunciar el sitio: revisar datos de contacto
 
-1. **Número de WhatsApp real.** Ahora mismo el sitio usa un número de prueba (`598910303333`). Buscá y reemplazá `598910303333` en `index.html` (aparece en el botón flotante, el header y varias secciones) por el número real, en formato internacional sin espacios ni símbolos (ej: `59899123456`).
-
-2. **Dirección/teléfono/email**, si cambian, están en `index.html` en las secciones "Ubicación" y "Contacto", y en el `<footer>`.
+1. **Dirección/teléfono/email**, si cambian, están en `index.html` en las secciones "Ubicación" y "Contacto", y en el `<footer>`. El WhatsApp actual es `+598 92 021 615` (en los enlaces se utiliza el formato `59892021615`).
 
 ## Seguimiento de visitas (analytics)
 

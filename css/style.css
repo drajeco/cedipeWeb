@@ -95,8 +95,8 @@ h2 {
 }
 
 .brand-logo {
-  height: 48px;
-  width: auto;
+  width: min(300px, 52vw);
+  height: auto;
 }
 
 .nav-toggle {
@@ -380,9 +380,9 @@ h2 {
   gap: 8px;
 }
 .footer-logo {
-  height: 42px;
+  width: min(300px, 72vw);
+  height: auto;
   margin-bottom: 6px;
-  border-radius: 8px;
 }
 .site-footer a {
   color: #ffffff;

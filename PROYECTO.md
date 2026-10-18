@@ -21,7 +21,7 @@ Crear una landing page para CEDIPE (Centro de Enfermedades Digestivas Pediátric
 | Stack | HTML + CSS + JS plano, sin frameworks ni build step | Menor complejidad de mantenimiento, ideal para GitHub Pages. |
 | Equipo médico | Sin nombres ni fotos individuales por ahora — sección institucional genérica | Decisión explícita del usuario para arrancar más rápido. |
 | Dirección publicada | Hospital Italiano, Planta Baja, Consultorio 17, Bv. Artigas 1632, Montevideo | Dato encontrado en material de Instagram (más completo que el dato inicial "Consultorio 19" sin calle); el usuario confirmó usar este. |
-| Teléfono | Número de **prueba/placeholder**: `+598 91 030 3333` | El usuario pidió explícitamente no publicar un teléfono real todavía. **Pendiente reemplazar antes de publicar de verdad.** |
+| Teléfono | `+598 92 021 615` | Número real de contacto y WhatsApp, actualizado el 2026-10-18. |
 | Email de contacto | cedipe.gastro@gmail.com | Dato real provisto por el usuario. |
 | Obras sociales/prepagas | No se listan en el sitio | Decisión del usuario ("obviemos esa información"). |
 | Contenido | Se usa contenido real de Instagram (`contenido/texto.md` y `contenido/imagenes/`) en vez de placeholders genéricos | El usuario proveyó el material; da más autenticidad y ahorra tiempo de redacción. |
@@ -54,7 +54,7 @@ Se ejecutó `git init` y se creó el primer commit local (28 archivos) el 2026-0
 
 El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy (`pages build and deployment`) terminó exitoso y que el sitio responde 200 en `drajeco.github.io/cedipeWeb` (URL sin hipervínculo a propósito, ver nota de indexación más abajo), con HTML, CSS, JS e imágenes cargando correctamente y todas las secciones presentes.
 
-**El sitio ya está online y públicamente accesible.** Se sacó el formulario de contacto (ver decisión "Formulario de contacto" en la tabla de arriba); el único dato placeholder que queda es el número de WhatsApp de prueba — ver pendientes.
+**El sitio ya está online y públicamente accesible.** Se sacó el formulario de contacto (ver decisión "Formulario de contacto" en la tabla de arriba) y el número de WhatsApp real ya fue incorporado.
 
 **Indexación/discreción temporal:** dado que el sitio es público mientras todavía tiene datos placeholder, se agregó `robots.txt` (`Disallow: /`) y `<meta name="robots" content="noindex, nofollow">` en `index.html` para que buscadores como Google/Bing no lo indexen. Además, se sacó el hipervínculo activo a la URL publicada de `README.md`/`PROYECTO.md` (queda como texto plano en backticks), porque GitHub renderiza esos `.md` en una página de alta autoridad que los crawlers rastrean seguido, y un link ahí era la vía más probable de que el sitio se indexara sin querer. Ninguna de estas medidas oculta el sitio de alguien que ya tenga el link — solo evita que se descubra "por accidente" vía buscadores mientras se termina de cargar el contenido real.
 
@@ -62,11 +62,10 @@ El mismo 2026-09-10 el usuario activó GitHub Pages. Se verificó que el deploy 
 
 ## Pendientes / próximos pasos
 
-1. Reemplazar el número de WhatsApp de prueba (`598910303333`) por el número real del consultorio.
-2. Crear la propiedad GA4 en analytics.google.com y pasar el Measurement ID (`G-XXXXXXXXXX`) para completar la integración de analytics.
-3. Una vez reemplazado el WhatsApp, sacar el bloqueo de indexación (`robots.txt` y la meta `noindex` de `index.html`) para que el sitio pueda aparecer en buscadores.
-4. (Opcional, futuro) Si en algún momento alguien con acceso a `cedipe.gastro@gmail.com` completa el alta en formspree.io, se puede reincorporar el formulario de contacto (instrucciones ya dadas en el chat).
-5. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
+1. Crear la propiedad GA4 en analytics.google.com y pasar el Measurement ID (`G-XXXXXXXXXX`) para completar la integración de analytics.
+2. Retirar el bloqueo de indexación (`robots.txt` y la meta `noindex` de `index.html`) para que el sitio pueda aparecer en buscadores cuando se decida anunciarlo.
+3. (Opcional, futuro) Si en algún momento alguien con acceso a `cedipe.gastro@gmail.com` completa el alta en formspree.io, se puede reincorporar el formulario de contacto (instrucciones ya dadas en el chat).
+4. (Opcional, futuro) Evaluar compra de dominio propio y conectarlo vía `CNAME`.
 
 **Ya resuelto:** feedback visual inicial del usuario, `git init` + commit + repo remoto + push, activación de GitHub Pages, mitigación temporal de indexación (`robots.txt`, `noindex`, sin link clickeable en la documentación), decisión de sacar el formulario de contacto por falta de acceso al email del consultorio, elección de GA4 sobre Cloudflare Web Analytics (que quedó trabado en el alta) y aviso de privacidad agregado en el footer.
 
