@@ -95,7 +95,7 @@ h2 {
 }
 
 .brand-logo {
-  width: min(300px, 52vw);
+  width: min(230px, 45vw);
   height: auto;
 }
 
@@ -120,13 +120,13 @@ h2 {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 .site-nav a {
   text-decoration: none;
   color: var(--color-text);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 .site-nav a:hover {
   color: var(--color-primary);
